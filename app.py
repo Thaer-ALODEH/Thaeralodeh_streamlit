@@ -18,11 +18,19 @@ st.header("Streamlit App Exercises - Online Retail")
 @st.cache_data
 def load_data():
     try:
-        # Not: Veri setinizin adının 'online_retail_data.csv' olduğundan emin olun
-        df = pd.read_csv("online_retail_data.csv", encoding="ISO-8859-1")
-        # Problem 6: Revenue (Gelir) değişkeni oluşturma
-        df['Revenue'] = df['Quantity'] * df['UnitPrice']
-        return df
+        @st.cache_data
+def load_data():
+    # ISO-8859-1 kodlaması ile veriyi oku [cite: 367]
+    df = pd.read_csv("online_retail_data.csv", encoding="ISO-8859-1")
+    
+    # Problem 6: Revenue hesapla 
+    # Revenue = Quantity * UnitPrice
+    df['Revenue'] = df['Quantity'] * df['UnitPrice']
+    
+    # Problem 7: Tarih sütununu dönüştür [cite: 375, 390]
+    df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
+    
+    return df
     except Exception as e:
         st.error(f"Veri yükleme hatası: {e}")
         return None
