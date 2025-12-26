@@ -18,25 +18,23 @@ st.header("Streamlit App Exercises - Online Retail")
 @st.cache_data
 def load_data():
     try:
-        @st.cache_data
-def load_data():
-    # ISO-8859-1 kodlaması ile veriyi oku [cite: 367]
-    df = pd.read_csv("online_retail_data.csv", encoding="ISO-8859-1")
-    
-    # Problem 6: Revenue hesapla 
-    # Revenue = Quantity * UnitPrice
-    df['Revenue'] = df['Quantity'] * df['UnitPrice']
-    
-    # Problem 7: Tarih sütununu dönüştür [cite: 375, 390]
-    df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
-    
-    return df
+        # sep=None ve engine='python' ayırıcıyı (comma/semicolon) otomatik algılar
+        df = pd.read_csv("online_retail_data.csv", sep=None, engine='python', encoding="ISO-8859-1")
+        
+        # Sütun isimlerindeki boşlukları temizleyelim (hata almamak için)
+        df.columns = df.columns.str.strip()
+        
+        # Problem 6: Revenue değişkeni (Miktar * Birim Fiyat) [cite: 388]
+        df['Revenue'] = df['Quantity'] * df['UnitPrice']
+        
+        # Problem 7: Tarih dönüşümü [cite: 390]
+        df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
+        
+        return df
     except Exception as e:
-        st.error(f"Veri yükleme hatası: {e}")
+        st.error(f"Veri okunurken hata oluştu: {e}")
         return None
-
-df = load_data()
-
+        
 if df is not None:
     # Kenar Çubuğu Navigasyonu
     st.sidebar.title("Ödev Soruları")
