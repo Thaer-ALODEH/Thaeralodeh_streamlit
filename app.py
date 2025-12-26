@@ -19,7 +19,7 @@ st.header("Streamlit App Exercises - Online Retail")
 def load_data():
     try:
         # Not: Veri setinizin adının 'online_retail_data.csv' olduğundan emin olun
-        df = pd.read_csv("online_retail_data.csv", parse_dates=['InvoiceDate'])
+        df = pd.read_csv("Online Retail 2.csv", parse_dates=['InvoiceDate'])
         # Problem 6: Revenue (Gelir) değişkeni oluşturma
         df['Revenue'] = df['Quantity'] * df['UnitPrice']
         return df
