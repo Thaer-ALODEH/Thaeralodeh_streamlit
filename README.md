@@ -1,16 +1,8 @@
-# MIS Streamlit Projesi: Veri Analizi Dashboard'u
+# YBSB3003 Streamlit Projesi
+Bu uygulama Online Retail veri seti üzerindeki analizleri içerir.
 
-Bu proje, İstanbul Üniversitesi İktisat Fakültesi YBS Bölümü kapsamında hazırlanan bir ödevdir.
-
-## Proje Hakkında
-Uygulama, Python ve Streamlit kullanılarak bir veri seti üzerinde temel analizler yapmak ve görselleştirmeler sunmak amacıyla geliştirilmiştir. 
-
-### İçerik:
-- **Veri Yükleme:** `st.file_uploader` ile CSV yükleme.
-- **Etkileşim:** `st.selectbox` ve `st.slider` kullanımı.
-- **Görselleştirme:** Matplotlib ile interaktif grafikler.
-
-## Hazırlayan
-* **Ad Soyad:** THAER SAMER AHMAD ALODEH
-* **Ders:** Programming for Data Science (Doç. Dr. Elif Kartal) 
-* **Öğrenci No:** 0515220034
+## Özellikler
+- Veri seti yapısal analizi (Problem 1-2)
+- İnteraktif görselleştirmeler (Problem 3-7)
+- PCA ve Random Forest Regresyonu (Problem 8-11)
+- Yönetici Dashboard'u (Problem 12)
